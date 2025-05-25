@@ -1,4 +1,6 @@
 # Pandas: Manipulación y transformación de datos
+![Static Badge](https://img.shields.io/badge/Certificado_del_curso-Alura?logo=pandas&color=%231e4181&link=https%3A%2F%2Fapp.aluracursos.com%2Fcertificate%2Fguz27-unameconomia%2Fpandas-transformacion-manipulacion-datos)
+
 ## **📋Problemática del proyecto**
 Sugerir al anfitrión un precio a cobrar por tarifas diarias que garantice ganancias en momentos de alta demanda.
 
