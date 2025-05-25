@@ -6,14 +6,14 @@ Sugerir al anfitrión un precio a cobrar por tarifas diarias que garantice ganan
 
 ## **📋Procedimiento**
 - **1. Importando librerías y datos**
--  1.1. Normalización de datos
+			-  1.1. Normalización de datos
 - **2. Transformación de strings a datos numéricos**
-- 2.1. Manipulación de datos de tiempo
+			- 2.1. Manipulación de datos de tiempo
 - **3. Desafío de tokenización de datos**
 - **4. Manipulación de datos de tiempo**
-- 4.1. Resultados
--  convertir la columna precio a datos numéricos a
--  agrupar los precios respecto a las fechas para determinar en qué fecha hubo más demanda
+			- 4.1. Resultados
+					-  convertir la columna precio a datos numéricos
+					- agrupar los precios respecto a las fechas para determinar en qué fecha hubo más demanda
 
 
 ## **📋Resultado**
@@ -34,6 +34,27 @@ Sugerir al anfitrión un precio a cobrar por tarifas diarias que garantice ganan
 |2017-01|220372\.0|
 
 ## 🤖 Funciones empleadas durante el ejercicio
+
+ - `pd.read_json`
+ - `pd.json_normalize`
+ - `.explode`
+ - `.reset_index(drop=True, inplace=True`
+ - `.astype(np.int64)`
+ - `.apply(lambda x: x.replace('$',  '').replace(',','').strip())`
+ - `.applymap(lambda x: x.replace('$',  '').replace(',','').strip())`
+ - `.str.lower()`
+ - `.str.replace('[^a-zA-Z0-9\-\']',  ' ', regex=True)`--> regex=True Expresión regular (palabra llave) que realiza una búsqueda personalizada y más específica en el texto.
+ -->'[^a-zA-Z0-9\-\']´Estos son los caracteres que no (^) se van a modificar en el texto, todo lo demás sí.
+ - `.str.replace('(?<!\w)-(?!\w)',  ' ', regex=True)`-->(?<!\w)-(?!\w) Estos caracteres indican que si hay caracteres antes o después de un guion no los modifique
+ - `.str.replace('\{|}|\"','', regex=True)`
+ - `.str.split(',')`-->Mediante el método split separa el string en una lista por cada palabra
+ - `pd.to_datetime`
+ - `.dt.strftime`-->El método strftime se utiliza para formatear objetos de fecha y hora en Python. En el caso de dt.strftime('%Y-%m'), dt es un objeto de tipo datetime
+ - `.groupby`
+ - `.fillna`-->utilizamos el método fillna para llenar los elementos vacíos por '0.0'
+ - `inplace`-->definimos el parámetro de inplace para True para substituir en el DataFrame
+ - `.dt.strftime('%Y-%m'))['precio'].sum()\`
+
 
 ## 📒 Glosario
 ### Columnas anidadas
